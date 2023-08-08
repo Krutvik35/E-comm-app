@@ -33,4 +33,4 @@ const pulse = require('./src/utils/heartbeat');
   } catch (ex) {
     logger.error(`[critical error] ${JSON.stringify(ex)}`);
   }
-})();
+})({ s });
