@@ -3,7 +3,7 @@ const express = require('express');
 
 // Internal dependencies
 const logger = require('../services/logger');
-
+const userRouter = require('./user');
 const router = express.Router();
 
 const getRoutes = () => {
@@ -11,6 +11,8 @@ const getRoutes = () => {
   router.get('/', (req, res) => {
     res.status(200).json({ message: 'ok' });
   });
+
+  router.use('/user', userRouter);
 
   logger.info('Routes Registered Sucessfully.');
 
