@@ -8,7 +8,7 @@ logger.info(`
 
 const morganFormat = (tokens, req, res) => {
   const logEntry = `${tokens['status'](req, res)} ${tokens['method'](req, res)} ${tokens['url'](req, res)} ${tokens['response-time'](req, res)}`;
-  logger.log(tokens['status'] >= 400 ? 'error' : 'info', logEntry);
+  logger.log(tokens['status'](req,res) >= 400 ? 'error' : 'info', logEntry);
 
   return;
 };
